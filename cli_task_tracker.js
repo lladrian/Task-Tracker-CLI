@@ -77,9 +77,7 @@ function list_by_status(status) {
   }
 
 
-
-switch (command) {
-  case 'add': {
+function add_task() {
     const description = args.slice(1).join(' ');
     const data = loadData();
 
@@ -100,10 +98,9 @@ switch (command) {
     saveData(data);
 
     console.log(`Added item: "${description}"`);
-    break;
-  }
+}
 
-  case 'update': {
+function update_task() {
     const id = parseInt(args[1], 10);
     const description = args.slice(2).join(' ');
     const data = loadData();
@@ -119,10 +116,10 @@ switch (command) {
 
     saveData(data);
     console.log(`Updated item: "${JSON.stringify(task, null, 2)}"`);
-    break;
-  }
+}
 
-  case 'delete': {
+function delete_task() {
+
     const id = parseInt(args[1], 10);
     const data = loadData();
     const itemIndex = data.findIndex(i => i.id === parseInt(id));
@@ -141,10 +138,8 @@ switch (command) {
     saveData(data);
 
     console.log(`Deleted item: "${JSON.stringify(removed[0], null, 2)}"`);
-    break;
-  }
-
-  case 'mark-done': {
+}
+function mark_done_task() {
     const id = parseInt(args[1], 10);
     const data = loadData();
     const task = data.find(t => t.id === id);
@@ -158,10 +153,9 @@ switch (command) {
 
     saveData(data);
     console.log(`Updated item: "${JSON.stringify(task, null, 2)}"`);
-    break;
-  }
+}
 
-  case 'mark-todo': {
+function mark_todo_task() {
     const id = parseInt(args[1], 10);
     const data = loadData();
     const task = data.find(t => t.id === id);
@@ -175,10 +169,9 @@ switch (command) {
 
     saveData(data);
     console.log(`Updated item: "${JSON.stringify(task, null, 2)}"`);
-    break;
-  }
+}
 
-  case 'mark-in-progress': {
+function mark_in_progress_task() {
     const id = parseInt(args[1], 10);
     const data = loadData();
     const task = data.find(t => t.id === id);
@@ -192,10 +185,9 @@ switch (command) {
 
     saveData(data);
     console.log(`Updated item: "${JSON.stringify(task, null, 2)}"`);
-    break;
-  }
+}
 
-  case 'list': {
+function list_task() {
     const status_command = args.slice(1).join(' ');
 
     if(status_command == "done") {
@@ -209,7 +201,41 @@ switch (command) {
     } else {
         console.log(`Unknown command: ${status_command}`);
     }
+}
 
+switch (command) {
+  case 'add': {
+    add_task();
+    break;
+  }
+
+  case 'update': {
+    update_task();
+    break;
+  }
+
+  case 'delete': {
+    delete_task();
+    break;
+  }
+
+  case 'mark-done': {
+    mark_done_task();
+    break;
+  }
+
+  case 'mark-todo': {
+    mark_todo_task();
+    break;
+  }
+
+  case 'mark-in-progress': {
+    mark_in_progress_task();
+    break;
+  }
+
+  case 'list': {
+    list_task();
     break;
   }
 
