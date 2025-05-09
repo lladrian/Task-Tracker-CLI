@@ -17,7 +17,7 @@ A simple command-line task tracker app built using Node.js that uses a JSON file
 
 2. Clone or download this project.
 
-3. To run use this command : "node cli_task_tracker.js list"
+3. To run use this command : `node cli_task_tracker.js list`
   - Usage: node cli_task_tracker.js [command] [options]
   - Commands:
       - **add <description>**          Add a new item with the specified description.
