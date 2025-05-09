@@ -11,13 +11,22 @@ const args = process.argv.slice(2);
 const command = args[0];
 
 function printUsage() {
-  console.log('Usage: node cli_task_tracker.js <command> [options]');
-  console.log('Commands:');
-  console.log('  add <item>       Add a new item');
-  console.log('  list             List all items');
-  console.log('  delete <index>   Delete item by index');
-  console.log('  help             Show this help message');
+    console.log('Usage: node cli_task_tracker.js <command> [options]');
+    console.log('Commands:');
+    console.log('  add <description>                Add a new item with the specified description.');
+    console.log('  delete <id>                      Delete the item with the specified ID.');
+    console.log('  update <id>                      Update the item with the specified ID.');
+    console.log('  mark-done <id>                   Mark the item with the specified ID as "done".');
+    console.log('  mark-todo <id>                   Mark the item with the specified ID as "todo".');
+    console.log('  mark-in-progress <id>            Mark the item with the specified ID as "in-progress".');
+    console.log('  list todo                        List items that are filtered by the status "todo".');
+    console.log('  list done                        List items that are filtered by the status "done".');
+    console.log('  list in-progress                 List items that are filtered by the status "in-progress".');
+    console.log('  list                             List all items.');
+    console.log('  help                             Show this help message.');
 }
+
+    
 
 // Helper function to load data from the JSON file
 function loadData() {
