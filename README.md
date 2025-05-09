@@ -20,12 +20,12 @@ A simple command-line task tracker app built using Node.js that uses a JSON file
 3. To run use this command : "node cli_task_tracker.js list"
   - Usage: node cli_task_tracker.js [commands] [options]
   - Commands:
-      - **add <Description>**           Add a new item with the specified description.
-      - **delete [ID]**                Delete the item with the specified ID.
-      - **update [ID]**                Update the item with the specified ID.
-      - **mark-done [ID]**             Mark the item with the specified ID as "done".
-      - **mark-todo [ID]**             Mark the item with the specified ID as "todo".
-      - **mark-in-progress [ID]**      Mark the item with the specified ID as "in-progress".
+      - **add <description>**          Add a new item with the specified description.
+      - **delete [id]**                Delete the item with the specified ID.
+      - **update [id]**                Update the item with the specified ID.
+      - **mark-done [id]**             Mark the item with the specified ID as "done".
+      - **mark-todo [id]**             Mark the item with the specified ID as "todo".
+      - **mark-in-progress [id]**      Mark the item with the specified ID as "in-progress".
       - **list todo**                  List items that are filtered by the status "todo".
       - **list done**                  List items that are filtered by the status "done".
       - **list in-progress**           List items that are filtered by the status "in-progress".
