@@ -1,4 +1,4 @@
-# CLI Task Manager
+# CLI Task Tracker
 
 A simple command-line task tracker app built using Node.js that uses a JSON file as a file-based database.
 
